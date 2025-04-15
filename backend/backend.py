@@ -65,7 +65,7 @@ def run_nikto():
         return jsonify({'error': 'Host is required'}), 400
 
     try:
-        command = f"./nikto.pl -host {host} {options}"
+        command = f"./nikto.pl -h {host} {options}"
         process = subprocess.run(command, shell=True, cwd="/opt/nikto/program", stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
         if process.returncode == 0:
