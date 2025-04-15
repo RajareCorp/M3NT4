@@ -1,0 +1,106 @@
+h1{
+    color: white;
+    text-align: center;
+}
+
+h2, h3, h4, h5, h6{
+    color: lawngreen;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* form{
+    background-color: darkslategrey;
+    color: white;
+    border: 1px solid lawngreen;
+    padding: 10px;
+    margin: 10px;
+
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    color: white;
+}
+
+header {
+    background-color: darkslategrey;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    border: 1px solid lawngreen;
+    border-radius: 8px;
+    padding: 1rem;
+    background: darkslategrey;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: lawngreen;
+}
+
+form {
+    margin-bottom: 1rem;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid lawngreen;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+button {
+    background-color: lawngreen;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: seagreen;
+}
+
+.result-box {
+    background: darkslategrey;
+    border: 1px solid lawngreen;
+    border-radius: 4px;
+    padding: 1rem;
+    max-height: 200px;
+    overflow-y: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+ul li a {
+    color: lawngreen;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}

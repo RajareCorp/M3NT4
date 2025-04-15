@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>M3NT4</title>
+</head>
+<body>
+    <header>
+        <h1>M3NT4</h1>
+    </header>
+
+    <main>
+        <!-- Section pour Nmap -->
+        <section>
+            <h2>Nmap Scan</h2>
+            <form id="nmap-form">
+                <label for="nmap-target">Target:</label>
+                <input type="text" id="nmap-target" name="target" required>
+                <button type="submit">Run Nmap</button>
+            </form>
+            <div class="result-box" id="nmap-output"></div>
+        </section>
+
+        <!-- Section pour Photon -->
+        <section>
+            <h2>Photon</h2>
+            <form id="photon-form">
+                <label for="photon-target">Target:</label>
+                <input type="text" id="photon-target" name="target" required>
+                <button type="submit">Run Photon</button>
+            </form>
+            <div class="result-box" id="photon-output"></div>
+        </section>
+
+        <!-- Section pour résultats Photon -->
+        <section>
+            <h2>Photon Results</h2>
+            <button id="load-photon-results">Load Results</button>
+            <ul id="photon-results-list"></ul>
+            <div class="result-box" id="photon-result-content"></div>
+        </section>
+
+        <section>
+            <h2>Nikto Scan</h2>
+            <form id="nikto-form">
+                <label for="nikto-host">Target Host:</label>
+                <input type="text" id="nikto-host" name="host" required placeholder="http://www.example.com">
+        
+                <label for="nikto-options">Options:</label>
+                <input type="text" id="nikto-options" name="options" placeholder="-Tuning 12345 -ssl">
+        
+                <button type="submit">Run Nikto</button>
+            </form>
+            <div class="result-box" id="nikto-output"></div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 M3NT4</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
