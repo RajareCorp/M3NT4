@@ -109,3 +109,21 @@ document.getElementById('nikto-form').addEventListener('submit', async (e) => {
         output.textContent = `Error: ${error.message}`;
     }
 });
+
+async function loadPublicIP() {
+    const ipElement = document.getElementById('public-ip');
+    try {
+        const response = await fetch('/ifconfig');
+        if (response.ok) {
+            const data = await response.json();
+            ipElement.textContent = data.output;
+        } else {
+            ipElement.textContent = 'Error fetching IP';
+        }
+    } catch (error) {
+        ipElement.textContent = `Error: ${error.message}`;
+    }
+}
+
+// Charger l'IP publique dès que la page est prête
+document.addEventListener('DOMContentLoaded', loadPublicIP);

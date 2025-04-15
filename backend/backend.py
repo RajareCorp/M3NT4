@@ -13,7 +13,7 @@ def serve_index():
 @app.route('/nmap', methods=['POST'])
 def run_nmap():
     target = request.json.get('target', '127.0.0.1')
-    result = subprocess.run(['nmap', target], capture_output=True, text=True)
+    result = subprocess.run(['nmap','-sV', '-p-', target], capture_output=True, text=True)
     return jsonify({'output': result.stdout})
 
 @app.route('/photon', methods=['POST'])
@@ -74,6 +74,44 @@ def run_nikto():
             return jsonify({'error': process.stderr}), 500
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+@app.route('/ifconfig', methods=['GET'])
+def get_ifconfig():
+    try:
+        result = subprocess.run(['curl', 'https://ifconfig.me'], capture_output=True, text=True)
+        return jsonify({'output': result.stdout})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/curl', methods=['GET'])
+def serve_curl():
+    return send_from_directory(app.static_folder, 'curl.html') 
+
+@app.route('/curl', methods=['POST'])
+def run_curl():
+    data = request.json
+    url = data.get('url')
+    if not url:
+        return jsonify({'error': 'URL is required'}), 400
+
+    try:
+        result = subprocess.run(['curl', '-s', url], capture_output=True, text=True)
+        if result.returncode == 0:
+            return jsonify({'output': result.stdout})
+        else:
+            return jsonify({'error': result.stderr}), 500
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
+@app.route('/vpn', methods=['get'])
+def start_vpn():
+    # Assurez-vous que le fichier de configuration OpenVPN est présent
+    if not os.path.exists('/etc/openvpn/config.ovpn'):
+        return jsonify({'error': 'VPN configuration file not found'}), 404
+
+    # Exécutez OpenVPN avec la configuration spécifiée
+    subprocess.Popen(['openvpn', '--config', '/etc/openvpn/config.ovpn'])
+    return jsonify({'message': 'VPN started successfully'}), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)

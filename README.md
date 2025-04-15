@@ -1,13 +1,14 @@
- ██▀███   ▄▄▄      ▄▄▄██▀▀▀▄▄▄       ██▀███  ▓█████ <br>
-▓██ ▒ ██▒▒████▄      ▒██  ▒████▄    ▓██ ▒ ██▒▓█   ▀ <br>
-▓██ ░▄█ ▒▒██  ▀█▄    ░██  ▒██  ▀█▄  ▓██ ░▄█ ▒▒███   <br>
-▒██▀▀█▄  ░██▄▄▄▄██▓██▄██▓ ░██▄▄▄▄██ ▒██▀▀█▄  ▒▓█  ▄ <br>
-░██▓ ▒██▒ ▓█   ▓██▒▓███▒   ▓█   ▓██▒░██▓ ▒██▒░▒████▒<br>
-░ ▒▓ ░▒▓░ ▒▒   ▓▒█░▒▓▒▒░   ▒▒   ▓▒█░░ ▒▓ ░▒▓░░░ ▒░ ░<br>
-  ░▒ ░ ▒░  ▒   ▒▒ ░▒ ░▒░    ▒   ▒▒ ░  ░▒ ░ ▒░ ░ ░  ░<br>
-  ░░   ░   ░   ▒   ░ ░ ░    ░   ▒     ░░   ░    ░   <br>
-   ░           ░  ░░   ░        ░  ░   ░        ░  ░<br>
-
+```
+                   ██▀███   ▄▄▄      ▄▄▄██▀▀▀▄▄▄       ██▀███  ▓█████ 
+                  ▓██ ▒ ██▒▒████▄      ▒██  ▒████▄    ▓██ ▒ ██▒▓█   ▀ 
+                  ▓██ ░▄█ ▒▒██  ▀█▄    ░██  ▒██  ▀█▄  ▓██ ░▄█ ▒▒███   
+                  ▒██▀▀█▄  ░██▄▄▄▄██▓██▄██▓ ░██▄▄▄▄██ ▒██▀▀█▄  ▒▓█  ▄ 
+                  ░██▓ ▒██▒ ▓█   ▓██▒▓███▒   ▓█   ▓██▒░██▓ ▒██▒░▒████▒
+                  ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░▒▓▒▒░   ▒▒   ▓▒█░░ ▒▓ ░▒▓░░░ ▒░ ░
+                    ░▒ ░ ▒░  ▒   ▒▒ ░▒ ░▒░    ▒   ▒▒ ░  ░▒ ░ ▒░ ░ ░  ░
+                    ░░   ░   ░   ▒   ░ ░ ░    ░   ▒     ░░   ░    ░   
+                     ░           ░  ░░   ░        ░  ░   ░        ░  ░
+```
 
 This project provides a secure environment for running a web application behind a VPN and Tor. It includes tools like Photon and Nikto for penetration testing, Flask for backend services, and DNS anonymization.
 
@@ -46,11 +47,15 @@ Place your .ovpn file in the vpn-config directory. Ensure it matches your prefer
 Build the Docker image using the following command:
 
 ```bash
-docker build -t secure-app .
+docker-compose up --build
+```
+ou
+```bash
+docker build -t m3nt4 .
 ```
 ### Step 4: Run the Application
 Run the Docker container:
 ```bash
-docker run --cap-add=NET_ADMIN --device /dev/net/tun -p 8080:8080 secure-app
+docker run --cap-add=NET_ADMIN --device /dev/net/tun -p 8080:8080 m3nt4
 ```
 The application will be accessible at http://localhost:8080.

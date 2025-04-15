@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  secure-app:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "8080:8080"
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    dns:
+      - 1.1.1.1
+      - 9.9.9.9
+    volumes:
+      - ./vpn-config:/etc/openvpn
+      - ./auth.txt:/etc/openvpn/auth.txt
+    restart: unless-stopped
