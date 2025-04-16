@@ -31,7 +31,7 @@ RUN git clone https://github.com/sullo/nikto /opt/nikto
 
 # Ajouter le code backend et frontend
 WORKDIR /app
-COPY backend/backend.py /app/
+COPY backend/ /app/
 COPY static /app/static
 
 # Exposer le port pour l'interface web

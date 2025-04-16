@@ -41,7 +41,14 @@ git clone https://github.com/RajareCorp/M3NT4.git
 cd your-repo-name
 ```
 ### Step 2: Provide VPN Configuration
-Place your .ovpn file in the vpn-config directory. Ensure it matches your preferred server and authentication method.
+Place your config.ovpn file in the vpn-config directory. Ensure it matches your preferred server and authentication method.
+
+Add auth.txt in the project :
+
+```bash
+username
+password
+```
 
 ### Step 3: Build the Docker Image
 Build the Docker image using the following command:

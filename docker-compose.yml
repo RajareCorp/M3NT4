@@ -16,5 +16,4 @@ services:
       - 9.9.9.9
     volumes:
       - ./vpn-config:/etc/openvpn
-      - ./auth.txt:/etc/openvpn/auth.txt
     restart: unless-stopped

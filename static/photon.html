@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Photon</title>
+</head>
+<body>
+    <header>
+        <h1>Photon</h1>
+    </header>
+    <main>
+        <!-- Section pour Photon -->
+        <section>
+            <h2>Photon</h2>
+            <form id="photon-form">
+                <label for="photon-target">Target:</label>
+                <input type="text" id="photon-target" name="target" required>
+                <button type="submit">Run Photon</button>
+            </form>
+            <div class="result-box" id="photon-output"></div>
+        </section>
+
+        <!-- Section pour résultats Photon -->
+        <section>
+            <h2>Photon Results</h2>
+            <button id="load-photon-results">Load Results</button>
+            <ul id="photon-results-list"></ul>
+            <div class="result-box" id="photon-result-content"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 M3NT4</p>
+    </footer>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/photon.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Nmap Scan</title>
+</head>
+<body>
+    <header>
+        <h1>Nmap Scan</h1>
+    </header>
+    <main>
+        <form id="nmap-form">
+            <label for="nmap-target">Target:</label>
+            <input type="text" id="nmap-target" name="target" required>
+            <button type="submit">Run Nmap</button>
+        </form>
+        <div class="result-box" id="nmap-output"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 M3NT4</p>
+    </footer>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/nmap.js"></script>
+</body>
+</html>

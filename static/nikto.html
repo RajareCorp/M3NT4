@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Nikto Scan</title>
+</head>
+<body>
+    <header>
+        <h1>Nikto Scan</h1>
+    </header>
+    <main>
+        <form id="nikto-form">
+            <label for="nikto-host">Target Host:</label>
+            <input type="text" id="nikto-host" name="host" required placeholder="http://www.example.com">
+            <label for="nikto-options">Options:</label>
+            <input type="text" id="nikto-options" name="options" placeholder="-Tuning 12345 -ssl">
+            <button type="submit">Run Nikto</button>
+        </form>
+        <div class="result-box" id="nikto-output"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 M3NT4</p>
+    </footer>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/nikto.js"></script>
+</body>
+</html>
