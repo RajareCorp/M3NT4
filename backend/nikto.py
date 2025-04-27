@@ -5,7 +5,7 @@ nikto_routes = Blueprint('nikto', __name__, static_folder='static')
 
 @nikto_routes.route('/')
 def nmap_page():
-    return send_from_directory(nikto_routes.static_folder, 'nmap.html') 
+    return send_from_directory(nikto_routes.static_folder, 'nikto.html') 
 
 @nikto_routes.route('/run', methods=['POST'])
 def run_nikto():
@@ -16,7 +16,10 @@ def run_nikto():
         return jsonify({'error': 'Host is required'}), 400
 
     try:
-        command = f"./nikto.pl -h {host} {options}"
+        if not options or options == "":
+            command = f"./nikto.pl -h {host}"
+        else: 
+            command = f"./nikto.pl -h {host} {options}"
         process = subprocess.run(command, shell=True, cwd="/opt/nikto/program", stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
         if process.returncode == 0:

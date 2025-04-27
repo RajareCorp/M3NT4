@@ -46,7 +46,7 @@ section {
     border: 1px solid lawngreen;
     border-radius: 8px;
     padding: 1rem;
-    background: darkslategrey;
+    background: rgba(47, 79, 79, 0.4);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -56,7 +56,7 @@ h2 {
 }
 
 form {
-    background: darkslategrey;
+    background: rgba(47, 79, 79, 0.4);
     margin-bottom: 1rem;
     color: #ffffff;
 }
@@ -71,7 +71,7 @@ input[type="text"] {
 }
 
 button {
-    background-color: lawngreen;
+    background-color: darkslategrey;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -84,7 +84,7 @@ button:hover {
 }
 
 .result-box {
-    background: darkslategrey;
+    background: rgba(47, 79, 79, 0.4);
     border: 1px solid lawngreen;
     border-radius: 4px;
     padding: 1rem;
