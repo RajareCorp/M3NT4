@@ -23,7 +23,7 @@ RUN pip3 install flask
 
 RUN git clone https://github.com/s0md3v/Photon.git /opt/photon
 RUN pip install -r /opt/photon/requirements.txt
-
+RUN pip install sherlock-project
 RUN git clone https://github.com/sullo/nikto /opt/nikto
 
 # Configurer un alias pour curl avec Tor

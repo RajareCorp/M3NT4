@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, send_from_directory, send_file
 from nmap import nmap_routes
 from photon import photon_routes
 from nikto import nikto_routes
+from sherlock import sherlock_routes
 import subprocess
 
 app = Flask(__name__, static_folder='static')
@@ -10,6 +11,7 @@ app = Flask(__name__, static_folder='static')
 app.register_blueprint(nmap_routes, url_prefix="/nmap")
 app.register_blueprint(photon_routes, url_prefix="/photon")
 app.register_blueprint(nikto_routes, url_prefix="/nikto")
+app.register_blueprint(sherlock_routes, url_prefix="/sherlock")
 
 # Endpoint pour servir l'interface
 @app.route('/')
